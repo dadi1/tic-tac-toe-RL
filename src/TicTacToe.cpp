@@ -63,3 +63,20 @@ bool TicTacToe::play_move(int position) {
 
     return true;
 }
+
+std::string TicTacToe::get_canonical_state() const {
+    std::string state_str;
+
+    state_str.reserve(9);
+
+    for (int cell : board) {
+
+        int relative_pice = cell * current_player;
+
+        if (relative_pice == 1) state_str += 'X';
+        else if (relative_pice == -1) state_str += 'O';
+        else state_str += '-';
+    }
+
+    return state_str;
+}

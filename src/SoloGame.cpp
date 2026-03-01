@@ -8,6 +8,7 @@ int SoloGame::play_round() {
     while(!game.is_terminal()) {
         game.print_board_symbol();
         player_turn(game.get_current_player());
+        std::cout << game.get_canonical_state() << std::endl;;
     }
     game.print_board_symbol();
 

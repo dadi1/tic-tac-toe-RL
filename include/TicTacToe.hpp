@@ -1,6 +1,7 @@
 #include <vector>
 #include <numeric>
 #include <stdexcept>
+#include <string>
 
 class TicTacToe {
 private:
@@ -44,4 +45,6 @@ public:
 
     bool play_move(int position);
 
-};
+    std::string get_canonical_state() const;
+
+}; // TicTacToe class
