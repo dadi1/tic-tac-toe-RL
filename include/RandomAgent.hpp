@@ -5,11 +5,10 @@
 #include <random>
 
 class RandomAgent: public Agent {
-public:
+private:
     std::mt19937 rng;
 
-private:
-    
+public:    
     RandomAgent();
 
     int choose_action(const std::string& state, const std::vector<int>& legal_moves) override;
