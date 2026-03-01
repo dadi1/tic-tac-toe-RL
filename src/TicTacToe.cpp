@@ -27,13 +27,26 @@ int TicTacToe::check_winner() const {
     return 0;
 }
 
-void TicTacToe::print_board() const{
+void TicTacToe::print_board() const {
     
     for (int i = 0; i < 9; i++) {
         if (i%3 == 0) std::cout << "\n" <<  "------" << std::endl;
         std::cout << board[i] << " ";
     }
     std::cout << "\n" <<  "------" << std::endl;
+}
+
+void TicTacToe::print_board_symbol() const {
+    std::string symbol;
+    for (int i = 0; i < 9; i++) {
+        if (board[i] == 0) symbol = "_";
+        if (board[i] == 1) symbol = "X";
+        if (board[i] == -1) symbol = "O";
+        if (i % 3 == 0) std::cout << "\n" << "------" << std::endl;
+
+        std::cout << symbol << " ";
+    }
+    std::cout << "\n" << "------" << std::endl; 
 }
 
 bool TicTacToe::play_move(int position) {
