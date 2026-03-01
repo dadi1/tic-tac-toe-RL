@@ -9,8 +9,10 @@ private:
     int move_count;
 
 public:
+    // Constructor
     TicTacToe(): board(9, 0), current_player(1), move_count(0) {}
 
+    // Reseter
     void reset() {
         std::fill(board.begin(), board.end(), 0);
         current_player = 1;
