@@ -1,4 +1,5 @@
-#include "game/TicTacToe.hpp"
+#include "../include/TicTacToe.hpp"
+
 #include <vector>
 #include <cmath>
 

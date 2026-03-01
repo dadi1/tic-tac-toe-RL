@@ -29,9 +29,10 @@ public:
                 moves.push_back(i);
             }
         }
+        return moves;
     }
 
-    int check_winner() const {}
+    int check_winner() const;
     
     bool is_terminal() const {return (check_winner() != 0 || move_count == 9);}
 
