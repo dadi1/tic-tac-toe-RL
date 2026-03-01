@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 #include <string>
 
@@ -6,4 +8,5 @@ public:
     virtual ~Agent() = default;
 
     virtual int choose_action(const std::string& state, const std::vector<int>& legal_moves) = 0;
-};
+
+}; // Abstract Agent.
