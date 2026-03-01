@@ -1,6 +1,7 @@
 #include "../include/SoloGame.hpp"
 
 #include <iostream>
+#include <limits>
 
 int SoloGame::play_round() {
 
@@ -25,10 +26,15 @@ void SoloGame::player_turn(int player) {
     if (player == -1) std::cout << "Player 2 (O) turn: make your play!" << std::endl;
 
     int position;
-    std::cin >> position;
-    while(!game.play_move(position)) {
-        std::cout << "This Decision was already made, try again!" << std::endl;
-        std::cin >> position;
-    }
+    
+    while(!(std::cin >> position) || !game.play_move(position)) {
 
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid input! Pleasre enter a number." << std::endl;
+        }
+
+        else std::cout << "This position is already take or invalid, try again!" << std::endl;
+    }
 }   
