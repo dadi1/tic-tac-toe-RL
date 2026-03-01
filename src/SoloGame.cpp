@@ -33,7 +33,7 @@ void SoloGame::player_turn(int player) {
         if (std::cin.fail()) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid input! Pleasre enter a number." << std::endl;
+            std::cout << "Invalid input! Please enter a number." << std::endl;
         }
 
         else std::cout << "This position is already take or invalid, try again!" << std::endl;
