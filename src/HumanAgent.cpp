@@ -29,7 +29,7 @@ int HumanAgent::choose_action(const std::string& state, const std::vector<int>& 
 
     }
 
-    return position
+    return position;
 }
 
 void HumanAgent::print_board(const std::string& state) const {
