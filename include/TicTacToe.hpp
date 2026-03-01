@@ -40,6 +40,6 @@ public:
 
     void print_board() const;
 
-    void choose_action() const;
+    bool play_move(int position);
 
 };

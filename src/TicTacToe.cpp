@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <cmath>
+#include <iostream>
+#include <algorithm>
 
 int TicTacToe::check_winner() const {
 
@@ -23,4 +25,28 @@ int TicTacToe::check_winner() const {
     }
 
     return 0;
+}
+
+void TicTacToe::print_board() const{
+    
+    for (int i = 0; i < 9; i++) {
+        if (i%3 == 0) std::cout << "\n" <<  "------" << std::endl;
+        std::cout << board[i] << " ";
+    }
+    std::cout << "\n" <<  "------" << std::endl;
+}
+
+bool TicTacToe::play_move(int position) {
+
+    std::vector<int> legal_moves = get_legal_moves();
+
+    auto it = std::find(legal_moves.begin(), legal_moves.end(), position);
+
+    if (it == legal_moves.end()) return false;
+
+    board[position] = current_player;
+    current_player *= -1;
+    move_count++;
+
+    return true;
 }
