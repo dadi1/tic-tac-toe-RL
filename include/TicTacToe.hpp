@@ -38,4 +38,8 @@ public:
     
     bool is_terminal() const {return (check_winner() != 0 || move_count == 9);}
 
+    void print_board() const;
+
+    void choose_action() const;
+
 };
