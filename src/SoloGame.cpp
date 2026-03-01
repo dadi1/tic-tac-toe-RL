@@ -15,7 +15,7 @@ int SoloGame::play_round() {
 
     if (winner == 1)  std::cout << "Player 1 won the Round!." << std::endl;
     if (winner == -1) std::cout << "Player 2 won the Round!." << std::endl;
-    if (winner == 0)  std::cout << "That's a Drawn!" << std::endl;
+    if (winner == 0)  std::cout << "That's a Draw!" << std::endl;
 
     return winner;
 }
