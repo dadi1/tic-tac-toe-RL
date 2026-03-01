@@ -21,7 +21,7 @@ int TicTacToe::check_winner() const {
         int sum = board[a] + board[b] + board[c];
 
         if (sum == 3) return 1;
-        else if (sum == -3) return 1;
+        else if (sum == -3) return -1;
     }
 
     return 0;
