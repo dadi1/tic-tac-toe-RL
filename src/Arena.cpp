@@ -47,4 +47,5 @@ int Arena::play_match_result(Agent* player_x, Agent* player_o) {
     if (winner == -1) return -1;
     if (winner == 0) return 0;
 
+    return winner;
 }
