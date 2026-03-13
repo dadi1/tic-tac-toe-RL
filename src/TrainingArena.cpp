@@ -131,3 +131,35 @@ void TrainingArena::train_self_play(int total_episodes, const std::string& filen
     learner.save_model(filename);
     std::cout << "Self Training concluded with Success!!" << std::endl;
 }
+
+void TrainingArena::evaluation(RLAgent* rl_agent, RandomAgent* random_agent, int total_matches) {
+
+    int rl_agent_wins = 0;
+    int random_agent_wins = 0; 
+    int draws = 0;
+
+    for (int match = 0; match < total_matches; match++) {
+        
+        int result = play_match_result(rl_agent, random_agent);
+
+        if (result == 1) {
+            rl_agent_wins++;
+        }
+        else if (result == -1) {
+            random_agent_wins++;
+        }
+
+        else if(result == 0) {
+            draws++;
+        }
+    }
+    double win_rate  = (static_cast<double>(rl_agent_wins) / total_matches)  * 100;
+    double draw_rate = (static_cast<double>(draws) / total_matches) * 100;
+    double lose_rate = (static_cast<double>(random_agent_wins) / total_matches) * 100;
+
+    std::cout << "Stats :" << std::endl;
+    std::cout << "RL Agent won: " << rl_agent_wins << " times! (" << win_rate<< "%)" << std::endl;
+    std::cout << "Random Agent won " << random_agent_wins << " times! (" << lose_rate << "%)" << std::endl;
+    std::cout << "This Match had: " << draws << " draws! ("<<draw_rate<< "%)" << std::endl;
+    
+}
