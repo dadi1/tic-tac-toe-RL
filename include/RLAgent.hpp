@@ -28,7 +28,7 @@ public:
 
     int choose_action(const std::string& state, const std::vector<int>& legal_moves) override;
 
-    void learn(int action, double reward, const std::string& state, const std::string& next_state, const std::vector<int>& next_legal_moves);
+    void learn(const std::string& state, int action, double reward, const std::string& next_state, const std::vector<int>& next_legal_moves);
 
     void save_model(const std::string& filename) const;
 

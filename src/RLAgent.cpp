@@ -51,7 +51,7 @@ int RLAgent::choose_action(const std::string& state, const std::vector<int>& leg
     return best_action;
 }
 
-void RLAgent::learn(int action, double reward, const std::string& state, const std::string& next_state, const std::vector<int>& next_legal_moves) {
+void RLAgent::learn(const std::string& state, int action, double reward, const std::string& next_state, const std::vector<int>& next_legal_moves) {
 
     ensure_state_exists(state);
 
