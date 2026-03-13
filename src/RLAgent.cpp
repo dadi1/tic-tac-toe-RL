@@ -114,5 +114,5 @@ void RLAgent::load_model(const std::string& filename) {
     }
 
     file.close();
-    std::cout << "Model was loaded with success (" << q_table.size() << "states) from: " << filename << std::endl;
+    std::cout << "Model was loaded with success (" << q_table.size() << " states) from: " << filename << std::endl;
 }
