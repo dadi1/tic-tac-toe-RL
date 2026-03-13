@@ -25,7 +25,7 @@ int HumanAgent::choose_action(const std::string& state, const std::vector<int>& 
         auto it = std::find(legal_moves.begin(), legal_moves.end(), position);
         
         if (it != legal_moves.end()) break;
-        else std::cout << "Occupied or invalid Position! Try Again!";
+        else std::cout << "Occupied or invalid Position! Try Again!" << std::endl;
 
     }
 
