@@ -9,7 +9,7 @@
 class TrainingArena : public Arena {
 private:
     TicTacToe game;
-    
+
 public:
 
     TrainingArena() = default;
@@ -18,4 +18,5 @@ public:
 
     void train_self_play(int total_episodes, const std::string& filename);
 
+    void evaluation(RLAgent* rl_agent, RandomAgent* random_agent, int total_matches);
 };
