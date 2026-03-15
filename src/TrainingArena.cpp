@@ -163,3 +163,27 @@ void TrainingArena::evaluation(RLAgent* rl_agent, RandomAgent* random_agent, int
     std::cout << "This Match had: " << draws << " draws! ("<<draw_rate<< "%)" << std::endl;
     
 }
+
+void TrainingArena::train_vs_models(RLAgent * rl_agent_1, RLAgent* rl_agent_2, int total_matches) {
+    int wins_agent_1 = 0;
+    int wins_agent_2 = 0;
+    int draws = 0;
+
+    for (int match = 0; match < total_matches; match++) {
+        int result = play_match_result(rl_agent_1, rl_agent_2);
+        
+        if (result == 1) wins_agent_1++;
+        else if (result == -1) wins_agent_2++;
+        else if (result == 0) draws++;
+
+    }
+
+    double win_rate_agent_1 = (static_cast<double>(wins_agent_1) / total_matches) * 100;
+    double win_rate_agent_2 = (static_cast<double>(wins_agent_2) / total_matches) * 100;
+    double draw_rate = (static_cast<double>(draws) / total_matches) * 100;
+
+    std::cout << "Stats of the game: " << std::endl;
+    std::cout << "Model 1 won: " << wins_agent_1 << " times! (" << win_rate_agent_1 << "%)" << std::endl;
+    std::cout << "Model 2 won: " << wins_agent_2 << " times! (" << win_rate_agent_2 << "%)" << std::endl;
+    std::cout << "This game had: " << draws << " draws! (" << draw_rate << "%)" << std::endl;
+}
