@@ -7,7 +7,7 @@ int main() {
 
     RLAgent robo_inteligente(0.1, 0.9, 0.0);
 
-    robo_inteligente.load_model("../models/q_table_v3.txt");
+    robo_inteligente.load_model("./models/q_table_v3.txt");
 
     Arena arena;
 
